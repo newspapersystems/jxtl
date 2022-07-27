@@ -31,8 +31,8 @@ all_flags = apr_cflags + " " + apr_libs + " " + apu_cflags + " " + apu_libs;
 
 define_macros = [];
 include_dirs = [top_srcdir + "/libjxtl", top_srcdir + "/bindings/include"];
-library_dirs = ["@prefix@/lib"];
-libraries = ["jxtl"];
+library_dirs = ["@libdir@"];
+libraries = ["jxtl-1.0"];
 extra_compile_args = [];
 
 # Parse the flags

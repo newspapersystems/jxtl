@@ -58,7 +58,6 @@ rpm:
 	rm -rf "${TMP_DEST_DIR}"
 	mkdir "${TMP_DEST_DIR}"
 	make clean
-	./configure --prefix=/usr
 	${MAKE}
 	${MAKE} install DESTDIR="${TMP_DEST_DIR}"
 	fpm -f -s dir -t rpm -n "${PACKAGE_NAME}" -v "${PACKAGE_VERSION}" \
