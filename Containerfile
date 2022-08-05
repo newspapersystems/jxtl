@@ -16,6 +16,7 @@ RUN yum update && \
        apr apr-util-devel swig && \
     yum clean all && \
     gem install fpm -v 1.11.0 && \
+    pip3 install wheel && \
     rm -rf /var/cache/yum
 
 WORKDIR /root/jxtl
@@ -28,4 +29,4 @@ RUN make install
 RUN make python-rpm && cp bindings/python/dist/*.whl packages/
 
 RUN yum install -y packages/*.x86_64.rpm && yum clean all && rm -rf /var/cache/yum \
-    && pip3 install packages/*.whl
+    && pip3 -vvvv install packages/*.whl && python3 -c "import libjxtl; print(libjxtl.Template())"

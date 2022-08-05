@@ -47,7 +47,7 @@ install-python-bindings:
 	cd ${PYTHON_BINDINGS_DIR} && python3 setup.py install
 
 python-rpm: python-bindings
-	cd ${PYTHON_BINDINGS_DIR} && python3 -m build
+	cd ${PYTHON_BINDINGS_DIR} && python3 -m build --sdist --wheel
 
 rpm:
 	rm -rf "${TMP_DEST_DIR}"

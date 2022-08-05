@@ -56,11 +56,13 @@ libjxtl_module = Extension('_libjxtl',
                            library_dirs = library_dirs,
                            libraries = libraries);
 
-setup(name = 'python3-libjxtl',
+setup(name = 'libjxtl',
       version = '@PACKAGE_VERSION@',
       description = "SWIG interface to LibJXTL",
       author = "Dan Rinehimer",
       author_email="rinehimer@gmail.com",
       url="https://github.com/rinehimer/jxtl",
+      python_requires = ">=3",
       ext_modules = [libjxtl_module],
-      py_modules = ["libjxtl"]);
+      py_modules = ["libjxtl"]
+);
