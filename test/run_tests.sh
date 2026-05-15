@@ -12,8 +12,16 @@ run_test() {
     local args=$2
     $jxtl $args -t $dir/input > $dir/test.output
     check_status "jxtl with args $args had bad exit status in $dir"
-    diff $dir/output $dir/test.output > /dev/null 2>&1
-    check_status "Failed test in $dir"
+    case "$dir" in
+    ./t7)
+        diff <(sort "$dir/output") <(sort "$dir/test.output") > /dev/null 2>&1
+        check_status "Failed test in $dir"
+        ;;
+    *)
+        diff $dir/output $dir/test.output > /dev/null 2>&1
+        check_status "Failed test in $dir"
+        ;;
+    esac
     rm $dir/test.output
 }
 

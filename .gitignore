@@ -48,5 +48,8 @@ src/jxtl-json-verify
 stamp-h1
 test/Makefile
 test/Makefile.in
+test/run_tests.sh.log
+test/run_tests.sh.trs
 test/t.json
+test/test-suite.log
 packages/
