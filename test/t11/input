@@ -1,0 +1,51 @@
+{{! t4 repeated several times to check for memory reuse.
+    Print each brewery and break down its beers by season.  Demonstrates
+    predicates and that lists of nodes can be properly expanded without a
+    section. -}}
+{{#section brewery ; separator="\n\n"}}
+{{name}} Brewery:
+  Year Round Beers:  {{beer[!season]/beer_name ; separator=", "}}
+{{ #if beer[season]}}
+  Seasonal Beers:  {{#section beer[season] ; separator=", "}}{{beer_name}} ({{season}}){{#end}}
+{{ #end}}
+{{#end}}
+
+{{#section brewery ; separator="\n\n"}}
+{{name}} Brewery:
+  Year Round Beers:  {{beer[!season]/beer_name ; separator=", "}}
+{{ #if beer[season]}}
+  Seasonal Beers:  {{#section beer[season] ; separator=", "}}{{beer_name}} ({{season}}){{#end}}
+{{ #end}}
+{{#end}}
+
+{{#section brewery ; separator="\n\n"}}
+{{name}} Brewery:
+  Year Round Beers:  {{beer[!season]/beer_name ; separator=", "}}
+{{ #if beer[season]}}
+  Seasonal Beers:  {{#section beer[season] ; separator=", "}}{{beer_name}} ({{season}}){{#end}}
+{{ #end}}
+{{#end}}
+
+{{#section brewery ; separator="\n\n"}}
+{{name}} Brewery:
+  Year Round Beers:  {{beer[!season]/beer_name ; separator=", "}}
+{{ #if beer[season]}}
+  Seasonal Beers:  {{#section beer[season] ; separator=", "}}{{beer_name}} ({{season}}){{#end}}
+{{ #end}}
+{{#end}}
+
+{{#section brewery ; separator="\n\n"}}
+{{name}} Brewery:
+  Year Round Beers:  {{beer[!season]/beer_name ; separator=", "}}
+{{ #if beer[season]}}
+  Seasonal Beers:  {{#section beer[season] ; separator=", "}}{{beer_name}} ({{season}}){{#end}}
+{{ #end}}
+{{#end}}
+
+{{#section brewery ; separator="\n\n"}}
+{{name}} Brewery:
+  Year Round Beers:  {{beer[!season]/beer_name ; separator=", "}}
+{{ #if beer[season]}}
+  Seasonal Beers:  {{#section beer[season] ; separator=", "}}{{beer_name}} ({{season}}){{#end}}
+{{ #end}}
+{{#end}}
