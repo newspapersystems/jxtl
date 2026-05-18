@@ -58,8 +58,10 @@ static void py_variable_to_json_internal( PyObject *obj,
     Py_ssize_t size = PyUnicode_GET_SIZE( obj );
     PyObject *str_obj = PyUnicode_EncodeUTF8( unicode, size, NULL );
 #endif
-    py_variable_to_json_internal( str_obj, writer );
-    PyObject_Free( str_obj );
+    if ( str_obj != NULL ) {
+      py_variable_to_json_internal( str_obj, writer );
+      Py_DECREF( str_obj );
+    }
   }
   else if ( PyDict_CheckExact( obj ) ) {
     py_dict_to_json( obj, writer );
